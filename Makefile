@@ -1,7 +1,10 @@
-all: httpd
+all: httpd simpleclient
 
 httpd: httpd.c
-	gcc -W -Wall -lsocket -lpthread -o httpd httpd.c
+	gcc -W -Wall -lpthread -o httpd httpd.c
+
+simpleclient: simpleclient.c
+	gcc -W -Wall -o simpleclient simpleclient.c
 
 clean:
-	rm httpd
+	rm httpd simpleclient
